@@ -1,0 +1,41 @@
+Source: rust-arbitrary
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/arbitrary]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/arbitrary
+Rules-Requires-Root: no
+
+Package: librust-arbitrary-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-derive-arbitrary-1+default-dev
+Provides:
+ librust-arbitrary+default-dev (= ${binary:Version}),
+ librust-arbitrary+derive-dev (= ${binary:Version}),
+ librust-arbitrary+derive-arbitrary-dev (= ${binary:Version}),
+ librust-arbitrary-1-dev (= ${binary:Version}),
+ librust-arbitrary-1+default-dev (= ${binary:Version}),
+ librust-arbitrary-1+derive-dev (= ${binary:Version}),
+ librust-arbitrary-1+derive-arbitrary-dev (= ${binary:Version}),
+ librust-arbitrary-1.0-dev (= ${binary:Version}),
+ librust-arbitrary-1.0+default-dev (= ${binary:Version}),
+ librust-arbitrary-1.0+derive-dev (= ${binary:Version}),
+ librust-arbitrary-1.0+derive-arbitrary-dev (= ${binary:Version}),
+ librust-arbitrary-1.0.3-dev (= ${binary:Version}),
+ librust-arbitrary-1.0.3+default-dev (= ${binary:Version}),
+ librust-arbitrary-1.0.3+derive-dev (= ${binary:Version}),
+ librust-arbitrary-1.0.3+derive-arbitrary-dev (= ${binary:Version})
+Description: Trait for generating structured data from unstructured data - Rust source code
+ This package contains the source for the Rust arbitrary crate, packaged by
+ debcargo for use with cargo and dh-cargo.
