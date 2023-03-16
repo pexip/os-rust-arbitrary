@@ -28,6 +28,57 @@ Released YYYY-MM-DD.
 
 --------------------------------------------------------------------------------
 
+## 1.1.3
+
+Released 2022-06-23.
+
+### Fixed
+
+* Fixed some potential (but highly unlikely) name-clashes inside
+  `derive(Arbitrary)`'s generated
+  code. [#111](https://github.com/rust-fuzz/arbitrary/pull/111)
+* Fixed an edge case where `derive(Arbitrary)` for recursive types that detected
+  an overflow would not reset the overflow
+  detection. [#111](https://github.com/rust-fuzz/arbitrary/pull/111)
+
+--------------------------------------------------------------------------------
+
+## 1.1.2
+
+Released 2022-06-16.
+
+### Fixed
+
+* Fixed a warning inside `derive(Arbitrary)`-generated
+  code. [#110](https://github.com/rust-fuzz/arbitrary/pull/110)
+
+--------------------------------------------------------------------------------
+
+## 1.1.1
+
+Released 2022-06-14.
+
+### Fixed
+
+* Fixed a stack overflow when using `derive(Arbitrary)` with recursive types and
+  empty inputs. [#109](https://github.com/rust-fuzz/arbitrary/pull/109)
+
+--------------------------------------------------------------------------------
+
+## 1.1.0
+
+Released 2022-02-09.
+
+### Added
+
+* Added the `Unstructured::ratio` method to generate a boolean that is `true` at
+  the given rate.
+
+* Added the `Unstructured::arbitrary_loop` method to call a function an
+  arbitrary number of times.
+
+--------------------------------------------------------------------------------
+
 ## 1.0.3
 
 Released 2021-11-20.
